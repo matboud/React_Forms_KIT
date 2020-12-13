@@ -48,25 +48,41 @@ export default class Form_kit extends Component {
         return errorsChecker;
     }
 
+
+
     typeChecker = () => { // checking the excpected type of the given value 
         let errorsChecker = []; // array that returns falsy typeof
+
         this.props.data.map(item => {
             let stateItem = this.state[`${item.name}`]
-            if (item.type !== typeof stateItem) {
-                errorsChecker.push({ ...item, error: 'MISSMATCH_TYPE' })
+            
+            switch (item.type) {
+                case 'number':
+                    if (typeof stateItem !== 'number') {
+                        errorsChecker.push({ ...item, error: 'TYPE IS NOT NUMBER' })
+                    }
+                    break;
+                case 'string':
+                    if (typeof stateItem !== 'string') {
+                        errorsChecker.push({ ...item, error: 'TYPE IS NOT STRING' })
+                    }
+                    break;
+                case 'email':
+                    // Regular expression to check email validation
+                    const re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+                    if (!re.test(String(stateItem).toLowerCase())) {
+                        errorsChecker.push({ ...item, error: 'The input given is not a valid email' })
+                    }
+                    break;
+                default:
+                    if (typeof stateItem !== 'string') {
+                        errorsChecker.push({ ...item, error: 'TYPE IS NOT STRING.' })
+                    }
+                    break;
             }
         })
 
         return errorsChecker;
-    }
-
-    errorTitle = (item) => { //hadking the warning errors title
-        let errorTitle;
-        if (item.error == "EMPTY_FIELD") {
-            errorTitle = "Empty input:"
-        }
-
-        return errorTitle
     }
 
     handleSubmit = (event) => {
@@ -187,7 +203,7 @@ export default class Form_kit extends Component {
                                                                     </div>
                                                                     <div className="ml-3">
                                                                         <p className="text-sm text-yellow-700">
-                                                                            {this.errorTitle(item)}
+                                                                            {item.error}
                                                                         </p>
                                                                         <button href="#" className="font-medium underline text-yellow-700 hover:text-yellow-600 text-left" onClick={() => { this.handleFocusInput(item) }}>
                                                                             Please checkout the field {item.title} one more time

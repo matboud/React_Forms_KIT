@@ -23,23 +23,23 @@ export default class Home extends Component {
       {
         id: "0000", //id that could be generated with UUID 
         name: "field1", // name of the text input
-        title: "Input 1", // title label
-        type: "string", // expected given value
+        title: "Email", // title label
+        type: "email", // expected given value
         required: true, // in case the user leave it empty
-        autocomplete: 'name' // autocomplete type
+        autocomplete: 'email' // autocomplete type
       },
       {
         id: "0001",
         name: "field2",
-        title: "Input 2",
+        title: "Name",
         type: "string",
         required: true,
-        autocomplete: 'nickname'
+        autocomplete: 'name'
       },
       {
         id: "0003",
         name: "field3",
-        title: "Input 3",
+        title: "Last Name",
         type: "string",
         required: true,
         autocomplete: 'name'
@@ -47,35 +47,20 @@ export default class Home extends Component {
       {
         id: "0004",
         name: "field4",
-        title: "Input 4",
+        title: "UserName",
         type: "string",
         required: true,
-        autocomplete: 'name'
+        autocomplete: 'nickname'
       },
       {
         id: "0005",
         name: "field5",
-        title: "Input 5",
+        title: "password",
         type: "string",
         required: true,
-        autocomplete: 'name'
+        autocomplete: ''
       },
-      {
-        id: "0006",
-        name: "field6",
-        title: "Input 6",
-        type: "string",
-        required: true,
-        autocomplete: 'name'
-      },
-      {
-        id: "0007",
-        name: "field 7",
-        title: "Input 7",
-        type: "string",
-        required: true,
-        autocomplete: 'name'
-      },
+      
     ]
 
     return (
