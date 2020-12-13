@@ -1,10 +1,15 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app) and style handled with [`tailwind css`].
+React Form kit is a Repository of a `Next.js` app that contains a Generic component styed with `tailwind css`, that allows the user manage the validation in any ReactJs form, with many other features.
 
-## Getting Started
 
-First, run the development server:
+## Download the project
+
+after pulling the project please follow these steps:
 
 ```bash
+# installing needed dependencies:
+yarn install
+
+# running the project
 npm run dev
 # or
 yarn dev
@@ -12,13 +17,7 @@ yarn dev
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-You can start editing the page by modifying `pages/index.js`. The page auto-updates as you edit the file.
+## check it out
 
-## Learn More 
+Check [https://forms-kit.vercel.app/](https://forms-kit.vercel.app/) with your browser to see the result.
 
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
