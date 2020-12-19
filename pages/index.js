@@ -56,7 +56,7 @@ export default class Home extends Component {
         id: "0005",
         name: "field5",
         title: "password",
-        type: "string",
+        type: "password",
         required: true,
         autocomplete: ''
       },
