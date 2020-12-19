@@ -19,14 +19,12 @@ export default class Form_kit extends Component {
     handleSideBarAppearence = () => {
         this.setState({
             sidebar: !this.state.sidebar
-        }, () => {
-            // waiting for the animation to finish before removng the inset that cover the page
-            setTimeout(() => {
-                this.setState({
-                    sidebarInset: !this.state.sidebarInset
-                })
-            }, 700)
         })
+        setTimeout(() => {
+            this.setState({
+                sidebarInset: !this.state.sidebarInset
+            })
+        }, 700)
     }
 
     handleFormChange = (event) => {
@@ -55,7 +53,7 @@ export default class Form_kit extends Component {
 
         this.props.data.map(item => {
             let stateItem = this.state[`${item.name}`]
-            
+
             switch (item.type) {
                 case 'number':
                     if (typeof stateItem !== 'number') {
